@@ -11,7 +11,7 @@ import json
 import sys
 
 #pip install lxml
-def dataFetcher(adress):
+def dataFetcher(adress, atmos):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--incognito')
@@ -82,7 +82,14 @@ def dataFetcher(adress):
             val = x.find('p').text
             return val
 
-    soundStatus = checkSound()
+
+    checkAtmos = atmos
+    
+    if atmos == True:
+        soundStatus = checkSound()
+    else:
+        print("Analog Lyd")
+        soundStatus = "Ikke Atmos Sal"
 
     driver.get('https://'+ ip +':43744/#sms/monitoring')
     time.sleep(4)
