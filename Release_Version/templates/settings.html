@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!--<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/tableStyle.css') }}"/>-->
+  <title>Show CSV</title>
+</head>
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div class=".container-fluid">
+        </style>
+        <div class="row">
+          <div class="col-sm">
+            <br>
+            <p>Screen Name: {{ data.screenName }}</p>
+            <li>{{ data.lampStatus }}</li>
+            <li>Critical Warnings: {{ data.criticalCount }}</li>
+            <li>Maintanance Warnings: {{ data.maintCount }}</li>
+            <li>Disk Status:{{ data.diskStatus }}</li>
+            <li>Sound State: {{ data.soundState }}</li>
+            <li>Playing now: {{ data.movieTitle }}</li>
+            <li>Player Runtime: {{ data.playerRuntime }}</li>
+            <br>
+            <p>Messages:</p>
+            <li>{{ data.messagesInfo }}</li>
+          </div>
+          <div class="col-sm">
+          Runtime Data:
+          <li>{{ data.screenName }}</li>
+          </div>
+          <div class="col col-lg-2">
+            One of three columns
+          </div>
+        </div>
+      </div>
+    <!--{{ data }}-->
+    
+    {{ data|safe }}
+    {% endblock %}  
+  </div>
+</body>
+</html>

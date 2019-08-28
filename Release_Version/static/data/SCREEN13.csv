@@ -1,0 +1,5 @@
+TIME,SCREEN_NAME,LAMP_STATE,CRITICAL_WARNINGS,MAINT_WARNINGS,WARNINGS,DISK_STATE,SOUND_STATUS,FTR_RUNTIME,FTR_TITLE
+2019-08-26 21:21:43.962572,"('Sal: ', 'SAL 13')",The projector’s lamp is on,0,2,"10706
+security - automatic clock adjustment out of budget - auto adjustment not applied
+6200
+maintenance - maintenance is required",Healthy,"('Lydprosesor Status: ', 'Connected')",01:15:39,The Dead Don't Die TMS S20190826201500

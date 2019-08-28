@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+<div class=".container-fluid">
+<div class=".container-fluid p-2 mb-2  bg-dark text-white ">
+<head>
+  <meta charset="utf-8">
+<!-- Bootstrap CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet" />
+    <link href="static/css/bootstrap-theme.css" rel="stylesheet" />
+<!-- Load jquery-->
+    <script src="jquery-1.9.0.min.js"></script>
+  <title>JNIOR TEST TOOL</title>
+  <meta name="description" content="JNIOR TEST TOOL">
+  <meta name="Christopher Pettersen" content="SitePoint">
+    <!-- vanilla javascript -->
+    <script>
+        function runMacro(macroName) {
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.open('GET', '/macro.php?name=' + macroName);
+            httpRequest.send();
+        }
+    </script>
+    <script>
+        function jQueryRunMacro(macroName) {
+            $.get('/macro.php?name=' + macroName);
+        }
+    </script>
+
+	<!-- Enter button upon macro testing not working-->
+
+	 <script>
+      function updateIndicator() {
+        let indicator = document.getElementById('indicator')
+        indicator.className = navigator.onLine ? 'badge badge-pill badge-success' : 'badge badge-pill badge-danger';
+        indicator.textContent = navigator.onLine ? 'Connected' : 'Disconnected';
+        }
+	</script>
+
+
+
+</head>
+
+<body class=".container-fluid p-2 mb-2  bg-dark text-white " onload="updateIndicator()" ononline="updateIndicator()" onoffline="updateIndicator()">
+    <h3>
+        CINEMA MONITORING TOOL
+        <small class="text-muted">Developed by Christopher M. Pettersen</small>
+      </h3>
+        <!-- Navbar -->
+        <nav class="nav">
+            <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+            <a class="nav-link" href="{{ url_for('about') }}">About</a>
+            <a class="nav-link" href="{{ url_for('settings') }}">Settings</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </nav>
+        <!-- Navbar content --> 
+  
+  <!-- Status field -->
+  <!--
+  <div>Connected: <span id="indicator">(state unknown)</span> Hostname: {{ fetchedHostname }}</div>
+  <div>Ip Adress: {{fetchedIP}}</div>
+<br>-->
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+      {% block content %}
+      {% endblock %}
+</body>
+</div>
+
+</html>
+
+<!---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+ <head>
+   <meta charset="utf-8">
+   <title>Flask Parent Template</title>
+   <link rel="stylesheet" href="{{ url_for('static',     filename='css/template.css') }}">
+ </head>
+ <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">First Web App</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+
+ </body>
+</html>
+--->

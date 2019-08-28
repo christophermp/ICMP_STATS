@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Automation Tool</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <script>
+        function updateIndicator() {
+          let indicator = document.getElementById('indicator')
+          indicator.className = navigator.onLine ? 'badge badge-pill badge-success' : 'badge badge-pill badge-danger';
+          indicator.textContent = navigator.onLine ? 'Connected' : 'Disconnected';
+          }
+    </script>
+    <div>Connected: <span id="indicator">(state unknown)</span> Hostname: NA{{ fetchedHostname }}</div>
+    <div>License Server: http://minkino.no {{fetchedIP}}</div><div>License ID: DEV-12QfR-TwpS4-MINKINO</div>
+    
+  <br>
+    <!--{{ data }}-->
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data2.screenName }}</p>
+            <br>
+            <li>{{ data2.lampStatus }}</li>
+            <li>Critical Warnings: {{ data2.criticalCount }}</li>
+            <li>Error Warnings: {{ data2.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data2.maintCount }}</li>
+            <li>Disk Status: {% if data2.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <!--<li>Sound State: {{ data2.soundState }}</li>-->
+            <li>Sound State: {% if data2.soundState == "In error" %}
+              <span class="badge badge-danger">In error</span>
+            {% elif data2.soundState == "Connected" %}
+            <span class="badge badge-secondary">Idle</span>
+            {% else %}
+              <span class="badge badge-success">Active</span>
+            {% endif %}</li>
+            <li>Loaded Playlist: {{ data2.movieTitle }}</li>
+            <li>Player Runtime: {{ data2.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data2.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data2.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+        <div class="col-xs-12 col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data3.screenName }}</p>
+            <br>
+            <li>{{ data3.lampStatus }}</li>
+            <li>Critical Warnings: {{ data3.criticalCount }}</li>
+            <li>Error Warnings: {{ data3.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data3.maintCount }}</li>
+            <li>Disk Status: {% if data3.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data3.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data3.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data3.movieTitle }}</li>
+            <li>Player Runtime: {{ data3.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data3.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data3.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data4.screenName }}</p>
+            <br>
+            <li>{{ data4.lampStatus }}</li>
+            <li>Critical Warnings: {{ data4.criticalCount }}</li>
+            <li>Error Warnings: {{ data4.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data4.maintCount }}</li>
+            <li>Disk Status: {% if data4.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data4.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data4.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data4.movieTitle }}</li>
+            <li>Player Runtime: {{ data4.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data4.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data4.messagesInfo }}</p>
+            {% endif %}
+            <br>
+          </div>
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data5.screenName }}</p>
+            <br>
+            <li>{{ data5.lampStatus }}</li>
+            <li>Critical Warnings: {{ data5.criticalCount }}</li>
+            <li>Error Warnings: {{ data5.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data5.maintCount }}</li>
+            <li>Disk Status: {% if data5.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data5.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data5.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data5.movieTitle }}</li>
+            <li>Player Runtime: {{ data5.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data5.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data5.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data6.screenName }}</p>
+            <br>
+            <li>{{ data6.lampStatus }}</li>
+            <li>Critical Warnings: {{ data6.criticalCount }}</li>
+            <li>Error Warnings: {{ data6.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data6.maintCount }}</li>
+            <li>Disk Status: {% if data6.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data6.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data6.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data6.movieTitle }}</li>
+            <li>Player Runtime: {{ data6.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data6.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data6.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data7.screenName }}</p>
+            <br>
+            <li>{{ data7.lampStatus }}</li>
+            <li>Critical Warnings: {{ data7.criticalCount }}</li>
+            <li>Error Warnings: {{ data7.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data7.maintCount }}</li>
+            <li>Disk Status: {% if data7.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data7.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data7.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data7.movieTitle }}</li>
+            <li>Player Runtime: {{ data7.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data7.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data7.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data8.screenName }}</p>
+            <br>
+            <li>{{ data8.lampStatus }}</li>
+            <li>Critical Warnings: {{ data8.criticalCount }}</li>
+            <li>Error Warnings: {{ data8.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data8.maintCount }}</li>
+            <li>Disk Status: {% if data8.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data8.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data8.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data8.movieTitle }}</li>
+            <li>Player Runtime: {{ data8.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data8.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data8.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data9.screenName }}</p>
+            <br>
+            <li>{{ data9.lampStatus }}</li>
+            <li>Critical Warnings: {{ data9.criticalCount }}</li>
+            <li>Error Warnings: {{ data9.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data9.maintCount }}</li>
+            <li>Disk Status: {% if data9.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data9.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data9.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data9.movieTitle }}</li>
+            <li>Player Runtime: {{ data9.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data9.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data9.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data10.screenName }}</p>
+            <br>
+            <li>{{ data10.lampStatus }}</li>
+            <li>Critical Warnings: {{ data10.criticalCount }}</li>
+            <li>Error Warnings: {{ data10.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data10.maintCount }}</li>
+            <li>Disk Status: {% if data10.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data10.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data10.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data10.movieTitle }}</li>
+            <li>Player Runtime: {{ data10.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data10.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data10.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data11.screenName }}</p>
+            <br>
+            <li>{{ data11.lampStatus }}</li>
+            <li>Critical Warnings: {{ data11.criticalCount }}</li>
+            <li>Error Warnings: {{ data11.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data11.maintCount }}</li>
+            <li>Disk Status: {% if data11.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data11.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data11.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data11.movieTitle }}</li>
+            <li>Player Runtime: {{ data11.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data11.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data11.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data12.screenName }}</p>
+            <br>
+            <li>{{ data12.lampStatus }}</li>
+            <li>Critical Warnings: {{ data12.criticalCount }}</li>
+            <li>Error Warnings: {{ data12.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data12.maintCount }}</li>
+            <li>Disk Status: {% if data12.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data12.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data12.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data12.movieTitle }}</li>
+            <li>Player Runtime: {{ data12.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data12.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data12.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data13.screenName }}</p>
+            <br>
+            <li>{{ data13.lampStatus }}</li>
+            <li>Critical Warnings: {{ data13.criticalCount }}</li>
+            <li>Error Warnings: {{ data13.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data13.maintCount }}</li>
+            <li>Disk Status: {% if data13.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data13.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data13.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data13.movieTitle }}</li>
+            <li>Player Runtime: {{ data13.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data13.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data13.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+            <p class="badge badge-pill badge-warning">{{ data14.screenName }}</p>
+            <br>
+            <li>{{ data14.lampStatus }}</li>
+            <li>Critical Warnings: {{ data14.criticalCount }}</li>
+            <li>Error Warnings: {{ data14.errorWarnings }}</li>
+            <li>Maintanance Warnings: {{ data14.maintCount }}</li>
+            <li>Disk Status: {% if data14.diskStatus == "Degraded" %}
+                <span class="badge badge-danger">Degraded</span>
+              {% else %}
+                <span class="badge badge-success">Healthy</span>
+              {% endif %}</li>
+            <li>Sound State: {% if data14.soundState == "In error" %}
+                <span class="badge badge-danger">In error</span>
+              {% elif data14.soundState == "Connected" %}
+              <span class="badge badge-secondary">Idle</span>
+              {% else %}
+                <span class="badge badge-success">Active</span>
+              {% endif %}</li>
+            <li>Loaded Playlist: {{ data14.movieTitle }}</li>
+            <li>Player Runtime: {{ data14.playerRuntime }}</li>
+            <br>
+            <h5>Messages:</h5>
+            {% if data14.messagesInfo == "No messages" %}
+            <p class="text-monospace text-info">-- No message --</p>
+            {% else %}
+            <p class="text-monospace text-danger">{{ data14.messagesInfo }}</p>
+            {% endif %}
+            <br>
+        </div>
+        <div class="col-lg-6">
+          <p>col14</p>
+          
+        </div>
+      </div>
+    
+    {% endblock %}
+    <h5>
+        <small class="text-muted">Developed by Christopher M. Pettersen</small>
+      </h5>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+Flask==1.1.1
+selenium==3.141.0
+colorama==0.4.1
+tablib==0.13.0
+pandas==0.25.0
+Flask_CSV==1.2.0
+requests==2.22.0
+beautifulsoup4==4.8.0
