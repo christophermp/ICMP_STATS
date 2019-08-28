@@ -72,7 +72,7 @@ trigger.py
         f.close()
 
 #Then edit amounts of return fields:
-return data2=screen2, data3=screen3, data4=screen4, data5=screen5, data6=screen6,                  data7=screen7 #ECT...
+return data2=screen2, data3=screen3, data4=screen4, data5=screen5, data6=screen6, data7=screen7 #ECT...
 ```
 
 ## Contributing
