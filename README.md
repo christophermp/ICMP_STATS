@@ -39,19 +39,18 @@ Don`t close the console Windows. If so the services will stop.
 trigger.py
 ```python
 #Edit ip`s for your own servers.
+#Set parameter as True if there is ATMOS present, Else set False
     print("Starting Screen 1")
-    dc.dataFetcher('10.10.97.2')
+    dc.dataFetcher('10.10.97.2', True)
     time.sleep(60)
     print("Starting Screen 2")
-    dc.dataFetcher('10.6.98.2')
+    dc.dataFetcher('10.6.98.2', True)
     time.sleep(60)
 #ECT...
 ```
 Be sure to remove or add screens that aren`t present
 
 main.py
-
-trigger.py
 ```python
 #Add or remove amout of screens
     screen1 =[]
