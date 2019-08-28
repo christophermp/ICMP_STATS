@@ -53,7 +53,7 @@ main.py
 
 trigger.py
 ```python
-#Add or remove about of screens
+#Add or remove amout of screens
     screen1 =[]
     screen2 =[]
     screen3 =[]
