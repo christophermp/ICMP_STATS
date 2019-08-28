@@ -34,6 +34,20 @@ It`s not recommended to run them this way. The recommended way is:
 
 Don`t close the console Windows. If so the services will stop.
 
+## Initial Setup
+
+trigger.py
+```python
+#Edit ip`s for your own servers.
+    print("Starter Sal 2")
+    dc.dataFetcher('10.10.97.2')
+    time.sleep(60)
+    print("Starter Sal 3")
+    dc.dataFetcher('10.6.98.2')
+    time.sleep(60)
+#ECT...
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
