@@ -39,13 +39,40 @@ Don`t close the console Windows. If so the services will stop.
 trigger.py
 ```python
 #Edit ip`s for your own servers.
-    print("Starter Sal 2")
+    print("Starting Screen 1")
     dc.dataFetcher('10.10.97.2')
     time.sleep(60)
-    print("Starter Sal 3")
+    print("Starting Screen 2")
     dc.dataFetcher('10.6.98.2')
     time.sleep(60)
 #ECT...
+```
+Be sure to remove or add screens that aren`t present
+
+main.py
+
+trigger.py
+```python
+#Add or remove about of screens
+    screen1 =[]
+    screen2 =[]
+    screen3 =[]
+    screen4 =[]
+    screen5 =[]
+    screen6 =[]
+    screen7 =[]
+
+#Then edit amount of while statements
+#Be sere to name the json file exactly as the servers screen name!
+    with open('static/data/Screen1.json', 'r') as f:
+        screen1 = json.load(f)
+        f.close()
+    with open('static/data/Screen2.json', 'r') as f:
+        screen2 = json.load(f)
+        f.close()
+
+#Then edit amounts of return fields:
+return data2=screen2, data3=screen3, data4=screen4, data5=screen5, data6=screen6,                  data7=screen7 #ECT...
 ```
 
 ## Contributing
