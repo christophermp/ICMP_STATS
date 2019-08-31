@@ -6,7 +6,11 @@ This is a monitoring tool for your ICMP`s. (BIMR)
 
 
 
-This is a monitoring tool for your ICMP`s. (BIMR)
+## Prerequisites
+-Windows, MAC or Linux x86/64
+-Python 3.6 or higher.
+-Know how to create batch files.
+-Gekko(firefox) or Chromedriver (Follows the download)
 
 ## Installation
 
@@ -39,6 +43,11 @@ It`s not recommended to run them this way. The recommended way is:
 -Dubble click on main.py
 
 Don`t close the console Windows. If so the services will stop.
+
+## ATMOS
+
+If there is **ATMOS** present be **SURE** to add **True** after ip in **trigger.py**.
+If there is **CP650 / CP750** or other analog audio devices set it to **False**
 
 ## Initial Setup
 
