@@ -1,4 +1,10 @@
 # BARCO ICMP MESSAGE READER
+This is a monitoring tool for your ICMP`s. (BIMR)
+
+![alt text](https://raw.githubusercontent.com/christophermp/ICMP_STATS/blob/master/images/Skjermbilde.PNG)
+
+
+
 
 This is a monitoring tool for your ICMP`s. (BIMR)
 
