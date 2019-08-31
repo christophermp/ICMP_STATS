@@ -7,10 +7,10 @@ This is a monitoring tool for your ICMP`s. (BIMR)
 
 
 ## Prerequisites
--Windows, MAC or Linux x86/64
--Python 3.6 or higher.
--Know how to create batch files.
--Gekko(firefox) or Chromedriver (Follows the download)
+- Windows, MAC or Linux x86/64
+- Python 3.6 or higher.
+- Know how to create batch files.
+- Gekko(firefox) or Chromedriver (Follows the download)
 
 ## Installation
 
